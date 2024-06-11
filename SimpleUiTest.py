@@ -2,6 +2,7 @@ from nicegui import ui
 from nicegui.events import ValueChangeEventArguments
 import subprocess
 from tkinter import filedialog, Tk
+import os
 
 # Set the page title
 ui.page.title = 'RLSystems'
@@ -38,13 +39,14 @@ body, html {
 }
 
 .splitter-content {
-    width: calc(100% - 100px); /* Adjust width to account for left panel */
+    width: calc(100% - 120px); /* Adjust width to account for left panel */
     height: calc(100% - 70px); /* Adjust height to account for footer */
     overflow: hidden;
     padding: 16px; /* Add some padding for better visual */
     border: none;
     box-shadow: none;
-    margin-left: 100px; /* Adjust margin to account for left panel */
+    margin-left: 120px; /* Adjust margin to account for left panel */
+    position: relative; /* Added to position absolute elements within it */
 }
 
 .splitter-vertical {
@@ -165,17 +167,9 @@ html > * {
     display: none;
 }
 
-/* Custom styles for positioning images and text */
-.position-top {
-    justify-content: flex-start; /* Align items at the top */
-}
-
-.position-middle {
-    justify-content: center; /* Align items in the center */
-}
-
-.position-bottom {
-    justify-content: flex-end; /* Align items at the bottom */
+/* Custom styles for absolute positioning with pixel values */
+.absolute-position {
+    position: absolute;
 }
 
 /* Set the left splitter panel to be fixed and cover the full height */
@@ -184,7 +178,7 @@ html > * {
     top: 0;
     bottom: 0;
     left: 0;
-    width: 110px; /* Adjust the width as needed */
+    width: 120px; /* Adjust the width as needed */
     z-index: 2; /* Ensure it overlaps the footer */
     background-color: #D5A021; /* Ensure background color matches */
     overflow-y: auto; /* Allow scrolling if content is too tall */
@@ -211,9 +205,15 @@ instellingen_image_path = r'C:\Users\joshu\Downloads\RLSystems-main\RLSystems-ma
 start_image_path = r'C:\Users\joshu\Downloads\RLSystems-main\RLSystems-main\StartIconV1.1.png'  # Ensure the path is correctly escaped
 home_image_path = r'C:\Users\joshu\Downloads\RLSystems-main\RLSystems-main\HomeIcon.png'  # Ensure the path is correctly escaped
 
+image_path = r'C:\Users\joshu\Downloads\RLSystems-main\RLSystems-main\BackgroundImage.png'  # Example image path
+
+# Check if the image file exists
+if not os.path.exists(image_path):
+    print(f"Image not found: {image_path}")
+
 with ui.splitter(value=0).classes('w-full h-screen').style('height: 100vh; width: 100vw;') as splitter:  # Set initial splitter position to 0
     with ui.column().classes('left-splitter-panel'):
-        with ui.tabs().props('vertical').classes('w-full') as tabs:
+        with ui.tabs(value='Home').props('vertical').classes('w-full') as tabs:  # Set initial value to 'Home'
             with ui.tab('Home').classes('tab-with-image'):
                 ui.image(home_image_path).classes('icon')
             with ui.tab('Starts').classes('tab-with-image'):
@@ -221,10 +221,12 @@ with ui.splitter(value=0).classes('w-full h-screen').style('height: 100vh; width
             with ui.tab('Instellingen').classes('tab-with-image'):
                 ui.image(instellingen_image_path).classes('icon')
     with splitter.after:
-        with ui.tab_panels(tabs).props('vertical').classes('w-full h-full'):
+        with ui.tab_panels(tabs, value='Home').props('vertical').classes('w-full h-full'):  # Set initial value to 'Home'
             with ui.tab_panel('Home').classes('splitter-content'):
-                ui.label('Home').classes('text-h4')
-                ui.label('Content of Home')
+
+                # Apply CSS class for positioning here
+                with ui.column().classes('absolute-position').style('top: 235px; right: 150px;'):  # Use inline style for pixel positioning
+                    ui.image(image_path).style('width: 1000px; height: 1000px;')  # Set fixed width and height
 
             with ui.tab_panel('Starts').classes('splitter-content'):
                 ui.label('Starts').classes('text-h4')
