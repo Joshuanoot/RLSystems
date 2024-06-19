@@ -183,6 +183,32 @@ html > * {
     background-color: #D5A021; /* Ensure background color matches */
     overflow-y: auto; /* Allow scrolling if content is too tall */
 }
+
+/* Custom button styling */
+.custom-button {
+    padding: 12.5px 30px;
+    border: 0;
+    border-radius: 100px;
+    background-color: #A49694;
+    color: #A49694;
+    font-weight: bold;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+
+.custom-button:hover {
+    background-color: #A49694;
+    box-shadow: 0 0 20px #A49694;
+    transform: scale(1.1);
+}
+
+.custom-button:active {
+    background-color: #A49694;
+    transition: all 0.25s;
+    -webkit-transition: all 0.25s;
+    box-shadow: none;
+    transform: scale(0.98);
+}
 """)
 
 def show(event: ValueChangeEventArguments):
@@ -229,10 +255,8 @@ with ui.splitter(value=0).classes('w-full h-screen').style('height: 100vh; width
                     ui.image(image_path).style('width: 1000px; height: 1000px;')  # Set fixed width and height
 
             with ui.tab_panel('Starts').classes('splitter-content'):
-                ui.label('Starts').classes('text-h4')
-                ui.label('Content of Starts')
-                ui.label('User Actions').classes('mt-4 mb-2 font-bold text-lg')
-                ui.button('Run', on_click=lambda: ui.notify('Run Clicked')).props('icon=play_arrow')
+                ui.button('Run', on_click=on_run_button_click).props('icon=play_arrow').classes('custom-button')  # Apply custom button class
+
                 ui.button('Stop', on_click=lambda: ui.notify('Stop Clicked')).props('icon=stop')
 
                 ui.label('Choose a Value').classes('mt-4 mb-2 font-bold text-lg')
@@ -248,8 +272,8 @@ with ui.splitter(value=0).classes('w-full h-screen').style('height: 100vh; width
                 ui.button("Select and Run Python File", on_click=on_run_button_click).props('icon=play_circle')
 
             with ui.tab_panel('Instellingen').classes('splitter-content'):
-                ui.label('Instellingen').classes('text-h4')
-                ui.label('Content of Instellingen')
+                ui.label('').classes('text-h4')
+
 
     with ui.html(tag='div').classes('empty-bar'):
         pass  # Add the empty bar at the bottom of the splitter
