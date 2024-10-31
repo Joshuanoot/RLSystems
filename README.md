@@ -2,7 +2,7 @@ Readme file is Onder constructie
 <br />
 <div align="center">
    
-![Logo design](https://github.com/user-attachments/assets/a02f0357-2a22-4393-ac86-7d5e104c59b3)
+![Logo design](![Logo design DC](https://github.com/user-attachments/assets/b34354b4-8698-4ca9-b1ce-ec425a52f973)
  <h3 align="center">Tempolapmjes</h3>
  <p align="center">
     2023-2024 Lime
