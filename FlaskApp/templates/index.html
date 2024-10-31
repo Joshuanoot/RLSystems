@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Run Python Script</title>
+</head>
+<body>
+    <h1>Run Python Script.</h1>
+    <form id="runForm">
+        <label for="file_path">Script Path:</label>
+        <input type="text" id="file_path" name="file_path" required>
+        <button type="submit">Run Script</button>
+    </form>
+    <button id="stopButton">Stop Script</button>
+    <pre id="output"></pre>
+
+    <script>
+        document.getElementById('runForm').onsubmit = async function(event) {
+            event.preventDefault();
+            const filePath = document.getElementById('file_path').value;
+            const response = await fetch('/run-file', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ file_path: filePath })
+            });
+            const result = await response.json();
+            document.getElementById('output').textContent = JSON.stringify(result, null, 2);
+        };
+
+        document.getElementById('stopButton').onclick = async function() {
+            const response = await fetch('/stop-script', {
+                method: 'POST'
+            });
+            const result = await response.json();
+            document.getElementById('output').textContent = JSON.stringify(result, null, 2);
+        };
+    </script>
+</body>
+</html>
