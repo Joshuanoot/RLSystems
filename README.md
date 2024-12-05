@@ -1,4 +1,3 @@
-Readme file is Onder constructie 
 <br />
 <div align="center">
    
@@ -33,11 +32,16 @@ Readme file is Onder constructie
 </details>
 
 <!-- ABOUT THE PROJECT -->
-## Over het project 
+## Project Tempolamjes 
+  
 
-Tampolampjes  
+**NL**
 
 Tempolampjes is een Raspberry pi met special software waarmee de atleten hun records kunnen verbeteren. Een LED-strip, aangesloten op de 400 meter renbaan, begeleidt hen daarbij. Met de meegeleverde software kun je instellen hoeveel kilometers je wilt rennen, bijvoorbeeld 5 km of 10 km. De maximaal snelheid is 20 km km/u.
+
+**EN**
+
+Tempolamps is a Raspberry pi with special software that allows the athletes to improve their records. An LED strip, connected to the 400-meter race track, guides them in doing so. With the included software, you can set how many kilometers you want to run, for example, 5 km or 10 km. The maximum speed is 20 km/h.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
