@@ -1,7 +1,7 @@
 <br />
 <div align="center">
    
-![Logo design](![Logo design DC](https://github.com/user-attachments/assets/b34354b4-8698-4ca9-b1ce-ec425a52f973)
+![Logo design DC](https://github.com/user-attachments/assets/b34354b4-8698-4ca9-b1ce-ec425a52f973)
  <h3 align="center">Tempolapmjes</h3>
  <p align="center">
     2023-2024 Lime
@@ -83,13 +83,11 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-- [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-    - [ ] Chinese
-    - [ ] Spanish
+- [x] Add FLASK API 
+- [x] Add FRONT-END 
+- [ ] Add GUI template
+- [ ] Add documentation 
+  
 
 See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
 
@@ -99,8 +97,10 @@ See the [open issues](https://github.com/othneildrew/Best-README-Template/issues
 <!-- CONTACT -->
 ## Contact
 
-DedRed - 506308@vistacollege.nl
+DedRed - 506308@vistacollege.nl<br>
+Joshuanoot -  518786@vistacollege.nl
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+ 
