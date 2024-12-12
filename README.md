@@ -45,7 +45,9 @@ Tempolamps is a Raspberry pi with special software that allows the athletes to i
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+### screenshot van de UI RLSystem v1.2 
 
+![afbeelding](https://github.com/user-attachments/assets/ad54fbb2-c725-4f5e-a9a8-5d0d4ec0ed04)
 
 
 <!--  Gebouw met  -->
