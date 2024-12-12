@@ -1,0 +1,238 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0e7d4; /* Light background color */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    height: 100vh; /* Full viewport height */
+}
+
+.container {
+    display: flex;
+    flex-grow: 1; /* Allow the container to grow */
+    position: relative; /* Needed for absolute positioning of footer */
+}
+
+.sidebar {
+    background-color: #c69c3c; /* Sidebar color */
+    width: 10%; /* Responsive width */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative; /* For z-index */
+    z-index: 3; /* Ensure it overlaps footer */
+    margin-bottom: -50px; /* Adjust this value to control overlap */
+}
+
+.sidebar ul {
+    list-style: none; /* Remove bullet points */
+}
+
+.sidebar li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.sidebar li:hover {
+    background-color: #b88a2c; /* Hover effect */
+}
+
+.main-content {
+    flex-grow: 1; /* Take up remaining space */
+    display: flex;
+    justify-content: center; /* Center shapes */
+    align-items: center;
+}
+
+.footer {
+    background-color: #A49496; /* Footer color */
+    display: flex; /* Use Flexbox for layout */
+    justify-content: space-between; /* Space between items */
+    padding: 25px;
+    position: relative; /* Relative positioning */
+    z-index: 2; /* Lower than sidebar to allow overlap */
+}
+
+.text {
+    position: fixed;
+    left: 1%;
+    margin-top: 670px;    /* Adds space above the text */
+    padding-right: 1px;  /* Adds space to the left */
+    z-index: 2;
+    font-size: 20px;
+    width: 7%;
+    padding: 5px 20px; /* Adjust these values as needed */
+    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 500 !important;
+    background-color: #EDE7D9;
+    border-radius: 8px;
+    border-width: 0;
+    color: #333333;
+    cursor: pointer;
+    display: inline-block;
+ }
+ 
+ .text2 {
+    position: fixed;
+    right: 1%;
+    margin-top: 680px;    /* Adds space above the text */
+    padding-right: 1px;  /* Adds space to the left */
+    z-index: 2;
+    font-size: 20px;
+    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 500 !important;
+ }
+
+ .startbutton {
+    background-image: url('../images/StartIcon.png'); /* Replace with your actual image path */
+    background-size: 80px 80px; /* Desired size for the image */
+    background-repeat: no-repeat;
+    background-position: center top; /* Centers image at the top */
+    position: fixed;
+    top: 140px; /* Distance from the top of the viewport */
+    left: 5%; /* Centers horizontally */
+    transform: translateX(-50%); /* Centers button */
+    z-index: 4;
+    width: 108px; /* Fixed width for consistent centering */
+    height: 50px; /* Allows height to adjust based on content */
+    background-color: #EDE7D9;
+    border-radius: 8px;
+    border: none;
+    color: #333333;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers content horizontally */
+    justify-content: flex-end; /* Aligns text below image */
+    padding-top: 100px; /* Space at top for image */
+    padding-bottom: 10px; /* Space below text */
+    text-align: center;
+    transition: all 200ms;
+    white-space: nowrap;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.homebutton {
+    background-image: url('../images/homebutton.png'); /* Replace with your actual image path */
+    background-size: 90px 90px; /* Desired size for the image */
+    background-repeat: no-repeat;
+    background-position: center top; /* Centers image at the top */
+    position: fixed;
+    top: 20px; /* Distance from the top of the viewport */
+    left: 5%; /* Centers horizontally */
+    transform: translateX(-50%); /* Centers button */
+    z-index: 4;
+    width: 108px; /* Fixed width for consistent centering */
+    height: 50px; /* Allows height to adjust based on content */
+    background-color: #EDE7D9;
+    border-radius: 8px;
+    border: none;
+    color: #333333;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers content horizontally */
+    justify-content: flex-end; /* Aligns text below image */
+    padding-top: 100px; /* Space at top for image */
+    padding-bottom: 10px; /* Space below text */
+    text-align: center;
+    transition: all 200ms;
+    white-space: nowrap;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.settingsbutton {
+    background-image: url('../images/SettingIcon.png'); /* Replace with your actual image path */
+    background-size: 70px 70px; /* Desired size for the image */
+    background-repeat: no-repeat;
+    background-position: center top; /* Centers image at the top */
+    position: fixed;
+    top: 260px; /* Distance from the top of the viewport */
+    left: 5%; /* Centers horizontally */
+    transform: translateX(-50%); /* Centers button */
+    z-index: 4;
+    width: 108px; /* Fixed width for consistent centering */
+    height: 50px; /* Allows height to adjust based on content */
+    background-color: #EDE7D9;
+    border-radius: 8px;
+    border: none;
+    color: #333333;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers content horizontally */
+    justify-content: flex-end; /* Aligns text below image */
+    padding-top: 100px; /* Space at top for image */
+    padding-bottom: 10px; /* Space below text */
+    text-align: center;
+    transition: all 200ms;
+    white-space: nowrap;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.triangle {
+    position: fixed;
+    top: 72px;
+    left: 600px;
+    width: 1000px;
+    height: 800px;
+}
+
+.input {
+    position: fixed;
+    top: 50px;
+    left: 270px;
+}
+
+.scriptpath {
+    position: fixed;
+    top: 50px;
+    left: 180px;
+}
+
+.stop {
+    position: fixed;
+    top: 46px; /* Distance from the top of the viewport */
+    left: 32%; /* Centers horizontally */
+    transform: translateX(-50%); /* Centers button */
+    z-index: 4;
+    width: 80px; /* Fixed width for consistent centering */
+    height: 30px; /* Allows height to adjust based on content */
+    background-color: #A49496;
+    border-radius: 8px;
+    border: none;
+    color: #333333;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers content horizontally */
+    justify-content: flex-end; /* Aligns text below image */
+    padding-top: 10px; /* Space at top for image */
+    padding-bottom: 8px; /* Space below text */
+    text-align: center;
+    transition: all 200ms;
+    white-space: nowrap;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}

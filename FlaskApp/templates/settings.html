@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style3.css">
+    <title>RLSystems Settings</title>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <a href="start.html" class="startbutton" title="start">Start</a>
+        <div class="text">
+            <p>Ver 1.2</p>
+        </div>
+        <div class="text2">
+            <p>Bedrijf x</p>
+        </div>
+        <div class ="inputtopsnelheid">
+            <p>topsnelheid:</p>
+        </div>
+        <input type="text" class="topsnelheid" id="snelheid" name="snelheid" required>
+        <div class ="laps">
+            <p>Laps:</p>
+        </div>
+        <input type="text" class="inputlaps" id="laps" name="laps" required>
+        <div class="color-picker">
+            <label for="color">Choose a color:</label>
+            <input type="color" id="color" name="color" value="#ff0000">
+        </div>
+    </div>
+    </div>
+    <a href="Index.html" class="homebutton" title="home">Home</a>
+    <button class="settingsbutton">Settings</button>
+    <footer class="footer">
+        <!-- Footer content can be added here -->
+    </footer>
+
+    <script>
+        document.getElementById('runForm').onsubmit = async function(event) {
+            event.preventDefault();
+            const filePath = document.getElementById('file_path').value;
+            const response = await fetch('/run-file', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ file_path: filePath })
+            });
+            const result = await response.json();
+            document.getElementById('output').textContent = JSON.stringify(result, null, 2);
+        };
+
+        document.getElementById('stopButton').onclick = async function() {
+            const response = await fetch('/stop-script', {
+                method: 'POST'
+            });
+            const result = await response.json();
+            document.getElementById('output').textContent = JSON.stringify(result, null, 2);
+        };
+    </script>
+</body>
+</html>

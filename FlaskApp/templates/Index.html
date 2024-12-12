@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Style.css')}}">
+    <title>RLSystems Home</title>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <a href="start.html" class="startbutton" title="start">Start</a>
+        <div class="text">
+            <p>Ver 1.2</p>
+        </div>
+        <div class="text2">
+            <p>Bedrijf x</p>
+        </div>
+        <div>
+            <img src="{{ url_for('static', filename='images/Triangle.png') }}" class="triangle" alt="Triangle Image">
+        </div>
+    </div>
+    <button class="homebutton">Home</button>
+    <a href="settings.html" class="settingsbutton" title="settings">Settings</a>
+    <footer class="footer">
+        <!-- Footer content can be added here -->
+    </footer>
+
+    <script>
+        document.getElementById('runForm').onsubmit = async function(event) {
+            event.preventDefault();
+            const filePath = document.getElementById('file_path').value;
+            const response = await fetch('/run-file', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ file_path: filePath })
+            });
+            const result = await response.json();
+            document.getElementById('output').textContent = JSON.stringify(result, null, 2);
+        };
+
+        document.getElementById('stopButton').onclick = async function() {
+            const response = await fetch('/stop-script', {
+                method: 'POST'
+            });
+            const result = await response.json();
+            document.getElementById('output').textContent = JSON.stringify(result, null, 2);
+        };
+    </script>
+</body>
+</html>

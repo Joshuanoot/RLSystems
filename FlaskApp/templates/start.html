@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style2.css">
+    <title>RLSystems - Run Python Script</title>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+                    <!-- Sidebar content can be added here -->
+                </aside>
+                <main class="main-content">
+                    <form id="runForm">
+                        <div class="scriptpath">
+                            <label for="file_path">Script Path:</label> <!--deze stuk moet ik nog weg halen-->
+                        </div>
+                        <input type="text" class="input" id="file_path" name="file_path" required>
+                        <button type="submit" class="start">Start</button>
+                    </form>
+                    <button id="stopButton" class="stop">Stop Script</button>
+                    <pre id="output"></pre>
+                </main>
+        <div class="text">
+            <p>Ver 1.2</p>
+        </div>
+        <div class="text2">
+            <p>Bedrijf x</p>
+        </div>
+        <div class ="snelheid">
+            <p>Snelheid=</p>
+        </div>
+        <input type="text" class="inputsnelheid" id="snelheid" name="snelheid" required>
+        <div class ="laps">
+            <p>Laps:</p>
+        </div>
+        <input type="text" class="inputlaps" id="laps" name="laps" required>
+    </div>
+    <a href="index.html" class="homebutton" title="Home">home</a>
+    <a href="settings.html" class="settingsbutton" title="settings">Settings</a>
+    <button class="startbutton">Start</button>
+    <footer class="footer">
+        <!-- Footer content can be added here -->
+    </footer>
+
+    <script>
+        document.getElementById('runForm').onsubmit = async function(event) {
+            event.preventDefault();
+            const filePath = document.getElementById('file_path').value;
+            const response = await fetch('/run-file', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ file_path: filePath })
+            });
+            const result = await response.json();
+            document.getElementById('output').textContent = JSON.stringify(result, null, 2);
+        };
+
+        document.getElementById('stopButton').onclick = async function() {
+            const response = await fetch('/stop-script', {
+                method: 'POST'
+            });
+            const result = await response.json();
+            document.getElementById('output').textContent = JSON.stringify(result, null, 2);
+        };
+    </script>
+</body>
+</html>
