@@ -58,7 +58,7 @@ Tempolamps is a Raspberry pi with special software that allows the athletes to i
 * VNC
 * PUTTY
 * Raspberry Pi Imager
-* 
+  
 
 **Library**
 * grove.pi
