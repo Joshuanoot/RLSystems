@@ -49,18 +49,18 @@ Tempolamps is a Raspberry pi with special software that allows the athletes to i
 
 
 <!--  Gebouw met  -->
-### Gebouw met 
+<!-- This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples. -->
+### Gebouwd met 
+**Software**
+* Browser <br>
+* VNC
+* PUTTY
+* Raspberry Pi Imager
+* 
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-
-* [![Next][Next.js]][Next-url]
-* [![React][React.js]][React-url]
-* [![Vue][Vue.js]][Vue-url]
-* [![Angular][Angular.io]][Angular-url]
-* [![Svelte][Svelte.dev]][Svelte-url]
-* [![Laravel][Laravel.com]][Laravel-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url]
+**Library**
+* grove.pi
+  
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -71,13 +71,13 @@ To get a local copy up and running follow these simple example steps.
 
 
 <!-- USAGE EXAMPLES -->
-## Usage
+<!--## Usage
 
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
 _For more examples, please refer to the [Documentation](https://example.com)_
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">back to top</a>)</p> --> 
 
 
 <!-- ROADMAP -->
@@ -89,7 +89,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 - [ ] Add documentation 
   
 
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
